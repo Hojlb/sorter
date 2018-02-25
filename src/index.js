@@ -24,7 +24,10 @@ class Sorter {
       let compare = this.compFunc || function comp (a, b) {return a - b;}
 
         let newArr = [];
-        let ind = indices.sort(compare);
+        let ind = indices.sort(function (a, b){
+            return a - b;
+        });
+
 
         for (let i = 0; i < ind.length; i++){
             newArr.push(this.arr[ind[i]]);
